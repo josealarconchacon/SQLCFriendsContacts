@@ -1,0 +1,57 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "ee9a6ddb6ec51bdd15f4c9d69846b698f1db79424277d719858795dcb6a924a5"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator14.5",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/Build/Products",
+      "derivedDataPath" : "/Users/josealarconchacon/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/josealarconchacon/Library/Developer/Xcode/DerivedData/SQLCFriendsContacts-ejnzbxscmziiasaoomnzsygbfbwb/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/josealarconchacon/Library/Developer/Xcode/DerivedData/SQLCFriendsContacts-ejnzbxscmziiasaoomnzsygbfbwb/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone12,1",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "14.5",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "3D60A6B1-6456-4998-B9CF-0B4B63344008",
+          "TARGET_DEVICE_MODEL" : "iPhone12,1",
+          "TARGET_DEVICE_OS_VERSION" : "14.5",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

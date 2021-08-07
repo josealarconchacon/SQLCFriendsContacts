@@ -1,0 +1,7 @@
+Target dependency graph (3 targets)
+SQLite.swift in Pods
+Pods-SQLCFriendsContacts in Pods, depends on:
+SQLite.swift in Pods (explicit)
+SQLCFriendsContacts in SQLCFriendsContacts, depends on:
+Pods-SQLCFriendsContacts in Pods (implicit dependency via file 'Pods_SQLCFriendsContacts.framework' in build phase 'Link Binary'
+SQLite.swift in Pods (implicit dependency via options '-framework SQLite' in build setting 'OTHER_LDFLAGS'

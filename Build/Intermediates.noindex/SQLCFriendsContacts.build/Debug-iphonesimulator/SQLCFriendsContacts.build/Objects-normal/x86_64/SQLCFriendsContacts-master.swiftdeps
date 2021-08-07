@@ -1,7 +1,12 @@
 version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
 options: "efff78a95cde356656ea6a6e4d263888"
-build_time: [1628361708, 778203000]
+build_time: [1628363684, 998453000]
 inputs:
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Extention/ImageView.swift": [1628362562, 140682710]
   "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/ViewController.swift": [1628270700, 113828316]
   "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/AppDelegate.swift": [1628270700, 108908073]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SQLData/SQLiteCommands.swift": [9223372036, 854775807]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Model/UserContact.swift": [1628363259, 902761788]
   "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SceneDelegate.swift": [1628270700, 111919952]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SQLData/SQLDB.swift": [1628363683, 610786414]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Extention/UIViewController.swift": [1628363164, 160510756]
