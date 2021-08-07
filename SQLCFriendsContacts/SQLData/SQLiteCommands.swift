@@ -15,7 +15,7 @@ class SQLiteCommand {
     static let id = Expression<Int>("id")
     static let first_name = Expression<String>("first_name")
     static let last_name = Expression<String>("last_name")
-    static let phone_number = Expression<Int>("phone_number")
+    static let phone_number = Expression<String>("phone_number")
     static let user_image = Expression<Data>("user_image")
     static let user_email = Expression<String>("user_email")
     

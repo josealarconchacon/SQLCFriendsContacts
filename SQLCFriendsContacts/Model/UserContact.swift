@@ -13,7 +13,7 @@ struct UserContact {
     let id: Int
     let first_name: String
     let last_name: String
-    let phone_number: Int
+    let phone_number: String
     let user_image: Data
     let user_email: String
 }
