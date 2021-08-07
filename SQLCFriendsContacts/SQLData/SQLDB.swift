@@ -26,6 +26,6 @@ class SQLDB {
     
     // create DB table
     func create_db_table() {
-        
+        SQLiteCommand.create_table()
     }
 }
