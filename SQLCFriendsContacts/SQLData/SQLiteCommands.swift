@@ -46,5 +46,55 @@ class SQLiteCommand {
             print("Data store connection error")
             return nil
         }
+        do {
+            try db.run(set_table.insert(first_name <-   contact.first_name,
+                                        last_name <-    contact.last_name,
+                                        phone_number <- contact.phone_number,
+                                        user_image <-   contact.user_image,
+                                        user_email <-   contact.user_email))
+            return true
+        } catch let Result.error(message, code: code, statement) where code == SQLITE_CONSTRAINT{
+            print("Insert roe failed: \(message), in \(statement)")
+            return false
+        } catch let error {
+            print("Insertion failed: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    // present row
+    static func present_row() -> [UserContact]? {
+        guard let db = SQLDB.share.data_base else {
+            print("Data store connection error")
+            return nil
+        }
+        // contact array
+        var contact_array = [UserContact]()
+        // sort contact data in decending order
+        set_table = set_table.order(id.desc)
+        do {
+            for contact in try db.prepare(set_table) {
+                let id_value =              contact[id]
+                let first_name_value =      contact[first_name]
+                let last_name_value =       contact[last_name]
+                let phone_number_value =    contact[phone_number]
+                let user_image_value =      contact[user_image]
+                let user_email_value =      contact[user_email]
+                
+                // create object
+                let contact_object = UserContact(id: id_value,
+                                                 first_name: first_name_value,
+                                                 last_name: last_name_value,
+                                                 phone_number: phone_number_value,
+                                                 user_image: user_image_value,
+                                                 user_email: user_email_value)
+                // add object to an array
+                contact_array.append(contact_object)
+                print("id: \(contact[id]), first_name: \(contact[first_name]), last_name: \(contact[last_name]), phone_number \(contact[phone_number]), user_image: \(contact[user_image]), user_email: \(contact[user_email])")
+            }
+        } catch {
+            print("Rresent row error: \(error.localizedDescription)")
+        }
+        return contact_array
     }
 }
