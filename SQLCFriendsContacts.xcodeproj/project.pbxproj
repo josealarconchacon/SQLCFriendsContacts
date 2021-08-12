@@ -3,16 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5CA720757BF1230F76267BD5 /* Pods_SQLCFriendsContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07161899911D5BFCC8BBE9 /* Pods_SQLCFriendsContacts.framework */; };
-		6729429226BF0E37004939BF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729429126BF0E37004939BF /* ImageView.swift */; };
-		6729429826BF10E9004939BF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729429726BF10E9004939BF /* UIViewController.swift */; };
-		6729429B26BF111B004939BF /* UserContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729429A26BF111B004939BF /* UserContact.swift */; };
-		6729429E26BF11BD004939BF /* SQLDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729429D26BF11BD004939BF /* SQLDB.swift */; };
-		672942A026BF1323004939BF /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6729429F26BF1323004939BF /* SQLiteCommands.swift */; };
 		67B21FA626BDA7EC00481F6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B21FA526BDA7EC00481F6E /* AppDelegate.swift */; };
 		67B21FA826BDA7EC00481F6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B21FA726BDA7EC00481F6E /* SceneDelegate.swift */; };
 		67B21FAA26BDA7EC00481F6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B21FA926BDA7EC00481F6E /* ViewController.swift */; };
@@ -24,11 +19,6 @@
 /* Begin PBXFileReference section */
 		0A07161899911D5BFCC8BBE9 /* Pods_SQLCFriendsContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLCFriendsContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F0B45BEBBF05A12EF350D /* Pods-SQLCFriendsContacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLCFriendsContacts.release.xcconfig"; path = "Target Support Files/Pods-SQLCFriendsContacts/Pods-SQLCFriendsContacts.release.xcconfig"; sourceTree = "<group>"; };
-		6729429126BF0E37004939BF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		6729429726BF10E9004939BF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		6729429A26BF111B004939BF /* UserContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContact.swift; sourceTree = "<group>"; };
-		6729429D26BF11BD004939BF /* SQLDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDB.swift; sourceTree = "<group>"; };
-		6729429F26BF1323004939BF /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
 		67B21FA226BDA7EC00481F6E /* SQLCFriendsContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLCFriendsContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B21FA526BDA7EC00481F6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67B21FA726BDA7EC00481F6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,33 +48,8 @@
 				B0C920564DE1D810E6AEDC65 /* Pods-SQLCFriendsContacts.debug.xcconfig */,
 				268F0B45BEBBF05A12EF350D /* Pods-SQLCFriendsContacts.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		6729429026BF0E15004939BF /* Extention */ = {
-			isa = PBXGroup;
-			children = (
-				6729429126BF0E37004939BF /* ImageView.swift */,
-				6729429726BF10E9004939BF /* UIViewController.swift */,
-			);
-			path = Extention;
-			sourceTree = "<group>";
-		};
-		6729429926BF1104004939BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6729429A26BF111B004939BF /* UserContact.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6729429C26BF119A004939BF /* SQLData */ = {
-			isa = PBXGroup;
-			children = (
-				6729429D26BF11BD004939BF /* SQLDB.swift */,
-				6729429F26BF1323004939BF /* SQLiteCommands.swift */,
-			);
-			path = SQLData;
 			sourceTree = "<group>";
 		};
 		67B21F9926BDA7EC00481F6E = {
@@ -108,14 +73,11 @@
 		67B21FA426BDA7EC00481F6E /* SQLCFriendsContacts */ = {
 			isa = PBXGroup;
 			children = (
-				6729429C26BF119A004939BF /* SQLData */,
-				6729429926BF1104004939BF /* Model */,
 				67B21FA526BDA7EC00481F6E /* AppDelegate.swift */,
 				67B21FA726BDA7EC00481F6E /* SceneDelegate.swift */,
 				67B21FA926BDA7EC00481F6E /* ViewController.swift */,
 				67B21FAB26BDA7EC00481F6E /* Main.storyboard */,
 				67B21FAE26BDA7ED00481F6E /* Assets.xcassets */,
-				6729429026BF0E15004939BF /* Extention */,
 				67B21FB026BDA7ED00481F6E /* LaunchScreen.storyboard */,
 				67B21FB326BDA7ED00481F6E /* Info.plist */,
 			);
@@ -244,14 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6729429226BF0E37004939BF /* ImageView.swift in Sources */,
 				67B21FAA26BDA7EC00481F6E /* ViewController.swift in Sources */,
 				67B21FA626BDA7EC00481F6E /* AppDelegate.swift in Sources */,
-				672942A026BF1323004939BF /* SQLiteCommands.swift in Sources */,
-				6729429B26BF111B004939BF /* UserContact.swift in Sources */,
 				67B21FA826BDA7EC00481F6E /* SceneDelegate.swift in Sources */,
-				6729429E26BF11BD004939BF /* SQLDB.swift in Sources */,
-				6729429826BF10E9004939BF /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

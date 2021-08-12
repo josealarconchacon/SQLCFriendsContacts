@@ -236,8 +236,6 @@ SWIFT_CLASS("_TtC19SQLCFriendsContacts13SceneDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class NSString;
 @class NSBundle;
 @class NSCoder;

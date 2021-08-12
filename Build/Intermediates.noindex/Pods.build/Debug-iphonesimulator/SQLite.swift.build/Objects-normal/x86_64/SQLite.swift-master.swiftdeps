@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
 options: "a6bb41ea1a987ca148ce1e5ffea0668d"
-build_time: [1628363263, 854548000]
+build_time: [1628361704, 6102000]
 inputs:
   "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/Pods/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift": [1628270889, 379764885]
   "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/Pods/SQLite.swift/Sources/SQLite/Core/Blob.swift": [1628270889, 374918345]
