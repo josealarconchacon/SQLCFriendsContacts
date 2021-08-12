@@ -40,7 +40,7 @@ class SQLiteCommand {
         }
     }
     
-    // iNSERTING ROW
+    // inserting into row
     static func insert_row(_ contact: UserContact) -> Bool? {
         guard let db = SQLDB.share.data_base  else {
             print("Data store connection error")
@@ -58,6 +58,36 @@ class SQLiteCommand {
             return false
         } catch let error {
             print("Insertion failed: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    // updating row
+    static func update_row(_ contact_value: UserContact) -> Bool? {
+        guard let db = SQLDB.share.data_base else {
+            print("DB connection error")
+            return nil
+        }
+        // get the appropiate contact from tableView accordint to its id
+        let contact = set_table.filter(id == contact_value.id).limit(1)
+        do {
+            // update the contact's value
+            if try db.run(contact.update(first_name <- contact_value.first_name,
+                                         last_name <- contact_value.last_name,
+                                         phone_number <- contact_value.phone_number,
+                                         user_image <- contact_value.user_image,
+                                         user_email <- contact_value.user_email)) > 0 {
+                print("Updated contact")
+                return true
+            } else {
+                print("Could not update the selected cntact")
+                return false
+            }
+        } catch let Result.error(message, code: code, statement) where code == SQLITE_CONSTRAINT{
+            print("Could not update row: \(message) in \(String(describing: statement))")
+            return false
+        } catch let error {
+            print("The update failed: \(error.localizedDescription)")
             return false
         }
     }
