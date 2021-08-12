@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class ContactViewModel {
@@ -29,5 +30,9 @@ class ContactViewModel {
     
     func cell_for_row_at(indexPath: IndexPath) -> UserContact {
         return contact_array[indexPath.row]
+    }
+    
+    func height_for_row_at(indexPath: IndexPath) -> CGFloat {
+        return 115.0
     }
 }

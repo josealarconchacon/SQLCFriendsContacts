@@ -15,6 +15,7 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
 
         title = "Contacts"
         // connect to DB
@@ -23,7 +24,9 @@ class ContactViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         load_data()
+        tableView.tableFooterView = UIView()
         tableView.reloadData()
+        
     }
     
     // lead data from SQLite DB
@@ -38,11 +41,17 @@ extension ContactViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let data_object = display_contact_viewModel.cell_for_row_at(indexPath: indexPath)
         if let contact_cell = cell as? ContactTableViewCell {
             contact_cell.contact_values(data_object)
         }
         return cell
+    }
+}
+
+extension ContactViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        display_contact_viewModel.height_for_row_at(indexPath: indexPath)
     }
 }
