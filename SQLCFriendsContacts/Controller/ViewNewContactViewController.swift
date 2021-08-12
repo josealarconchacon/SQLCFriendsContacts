@@ -9,6 +9,7 @@ import UIKit
 
 class ViewNewContactViewController: UIViewController, UINavigationControllerDelegate {
 
+
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userFirstName: UITextField!
     @IBOutlet weak var userLastName: UITextField!
@@ -24,6 +25,7 @@ class ViewNewContactViewController: UIViewController, UINavigationControllerDele
         userImageView.isUserInteractionEnabled = true
         
         createTable()
+        set_up_views()
         userImageView.round_image()
         userFirstName.becomeFirstResponder()
         userPhoneNumber.delegate = self
@@ -35,8 +37,19 @@ class ViewNewContactViewController: UIViewController, UINavigationControllerDele
         db.create_db_table()
     }
     
+    // set up view with the values of the contacts
+    private func set_up_views() {
+        if let view_model = model {
+            userFirstName.text = view_model.first_name
+            userLastName.text = view_model.last_name
+            userPhoneNumber.text = view_model.phone_number
+            userImageView.image = view_model.user_image
+            userEmail.text = view_model.user_email
+        }
+    }
+    // save new contact or an updated contact
     @IBAction func saveButtonPressed(_ sender: Any) {
-        let id: Int = 0
+        let id: Int = model == nil ? 0 : model.id!
         let first_name = userFirstName.text ?? ""
         let last_name = userLastName.text ?? ""
         let phone = userPhoneNumber.text ?? ""
@@ -51,7 +64,14 @@ class ViewNewContactViewController: UIViewController, UINavigationControllerDele
                                    phone_number: phone ,
                                    user_image: photo,
                                    user_email: email)
-        create_new_contact(contacts)
+        if model == nil {
+            // contact created
+            create_new_contact(contacts)
+        } else {
+            // contact was updated
+            update_contact(contacts)
+        }
+        
         SQLiteCommand.present_row()
     }
     
@@ -65,8 +85,28 @@ class ViewNewContactViewController: UIViewController, UINavigationControllerDele
         }
     }
     
+    // update contact
+    private func update_contact(_ contact_value: UserContact) {
+        let contact_update_in_table = SQLiteCommand.update_row(contact_value)
+        // since phone is unique for each contact, check if it already exists
+        if contact_update_in_table == true {
+            if let cell_tap = navigationController {
+                cell_tap.popViewController(animated: true)
+            }
+        } else {
+            display_error("Error", message: "Faild updating this contact because the phone number already exists")
+        }
+    }
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let add_button = presentingViewController is UINavigationController
+        if add_button {
+            dismiss(animated: true, completion: nil)
+        } else if let cell_clicked = navigationController {
+            cell_clicked.popViewController(animated: true)
+        } else {
+            print("ContactTablevViewController is not inside a navegation controller")
+        }
     }
 }
 
