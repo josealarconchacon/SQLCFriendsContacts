@@ -16,8 +16,6 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
-        title = "Contacts"
         // connect to DB
         display_contact_viewModel.connect_database()
     }
@@ -32,6 +30,22 @@ class ContactViewController: UIViewController {
     // lead data from SQLite DB
     private func load_data() {
         display_contact_viewModel.load_data_from_database()
+    }
+    
+    // select contact from tableViewCell to ViewNewContactViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editContact" {
+            guard let new_contact_vc = segue.destination as? ViewNewContactViewController else {
+                return
+            }
+            guard let selected_contact_cell = sender as? ContactTableViewCell else {
+                return
+            }
+            if let index_path = tableView.indexPath(for: selected_contact_cell) {
+                let selected_contact = display_contact_viewModel.cell_for_row_at(indexPath: index_path)
+                new_contact_vc.model = ViewNewContactModel(contact_values: selected_contact)
+            }
+        }
     }
 }
 

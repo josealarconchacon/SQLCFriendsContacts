@@ -221,6 +221,47 @@ SWIFT_CLASS("_TtC19SQLCFriendsContacts11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImageView;
+@class UILabel;
+@class NSString;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC19SQLCFriendsContacts20ContactTableViewCell")
+@interface ContactTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified contactImage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified contactName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified contactPhone;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class UIStoryboardSegue;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC19SQLCFriendsContacts21ContactViewController")
+@interface ContactViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSIndexPath;
+
+@interface ContactViewController (SWIFT_EXTENSION(SQLCFriendsContacts)) <UITableViewDelegate>
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface ContactViewController (SWIFT_EXTENSION(SQLCFriendsContacts)) <UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UIWindow;
 @class UIScene;
 
@@ -236,15 +277,35 @@ SWIFT_CLASS("_TtC19SQLCFriendsContacts13SceneDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
-@class NSBundle;
-@class NSCoder;
 
-SWIFT_CLASS("_TtC19SQLCFriendsContacts14ViewController")
-@interface ViewController : UIViewController
+
+@class UITextField;
+
+SWIFT_CLASS("_TtC19SQLCFriendsContacts28ViewNewContactViewController")
+@interface ViewNewContactViewController : UIViewController <UINavigationControllerDelegate>
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified userImageView;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified userFirstName;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified userLastName;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified userPhoneNumber;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified userEmail;
 - (void)viewDidLoad;
+- (IBAction)saveButtonPressed:(id _Nonnull)sender;
+- (IBAction)cancelButtonPressed:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ViewNewContactViewController (SWIFT_EXTENSION(SQLCFriendsContacts)) <UITextFieldDelegate>
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UIImagePickerController;
+
+@interface ViewNewContactViewController (SWIFT_EXTENSION(SQLCFriendsContacts)) <UIImagePickerControllerDelegate>
+- (void)add_image;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
 @end
 
 #if __has_attribute(external_source_symbol)

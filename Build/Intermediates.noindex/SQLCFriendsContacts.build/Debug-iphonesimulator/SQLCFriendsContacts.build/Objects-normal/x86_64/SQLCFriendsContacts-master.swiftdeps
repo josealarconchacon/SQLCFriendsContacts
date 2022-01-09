@@ -1,7 +1,16 @@
 version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
 options: "efff78a95cde356656ea6a6e4d263888"
-build_time: [1628361708, 778203000]
+build_time: [1630542687, 234490000]
 inputs:
-  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/ViewController.swift": [1628270700, 113828316]
-  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/AppDelegate.swift": [1628270700, 108908073]
-  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SceneDelegate.swift": [1628270700, 111919952]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/ViewModel/ViewNewContactModel.swift": [1628741319, 0]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/ViewModel/ContactViewModel.swift": [1628737338, 127939441]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Extention/ImageView.swift": [1628362562, 140682710]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Controller/ViewNewContactViewController.swift": [1628741319, 0]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Support File/AppDelegate.swift": [1628270700, 108908073]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Controller/ContactViewController.swift": [1628741319, 0]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SQLData/SQLiteCommands.swift": [1628739546, 0]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Model/UserContact.swift": [1628369412, 0]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/View/ContactTableViewCell.swift": [1628736036, 731719896]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Support File/SceneDelegate.swift": [1628270700, 111919952]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/SQLData/SQLDB.swift": [1628366102, 687509560]
+  "/Users/josealarconchacon/Desktop/SQLCFriendsContacts/SQLCFriendsContacts/Extention/UIViewController.swift": [1628370071, 0]
